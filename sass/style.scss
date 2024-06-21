@@ -7,3 +7,63 @@ Description: Thème pour le site professionnel de Nathalie Mota - Photographe
 Requires at least: WordPress 5.0
 Version: 1.0
 */
+
+:root{
+    --main-red-color: #E00000;
+    --sec-red-color: #FE5858;
+    --third-red-color: #FFD6D6;
+    --black-color: #000;
+    --darkblue-color: #313144;
+    --darkgrey-color: #C4C4C4;
+    --mediumgrey-color: #D8D8D8;
+    --lightgrey-color: #E5E5E5;
+    --bg-color:#FFF;
+}
+
+
+body {
+    background-color: var(--bg-color);
+    font-family: 'Space Mono Bold Italic';
+    font-weight: 700;
+    font-style: normal;
+} 
+
+@font-face {
+    font-family: 'Poppins Light';
+    src: url('assets/fonts/Poppins-Light.ttf') format('truetype'), 
+         url('assets/fonts/Poppins-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Space Mono Bold';
+    src: url('assets/fonts/SpaceMono-Bold.ttf') format('truetype'),
+         url('assets/fonts/SpaceMono-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Space Mono Bold Italic';
+    src: url('assets/fonts/SpaceMono-BoldItalic.ttf') format('truetype'),
+         url('assets/fonts/SpaceMono-BoldItalic.woff2') format('woff2');
+    font-weight: 700;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Space Mono Regular';
+    src: url('assets/fonts/SpaceMono-Regular.ttf') format('truetype'),
+         url('assets/fonts/SpaceMono-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Space Mono Italic';
+    src: url('assets/fonts/SpaceMono-Italic.ttf') format('truetype'),
+         url('assets/fonts/SpaceMono-Italic.woff2') format('woff2');
+    font-weight: 400;
+    font-style: italic;
+}
