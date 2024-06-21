@@ -22,11 +22,34 @@ Version: 1.0
 
 
 body {
+    margin: 0;
+    padding: 0;
     background-color: var(--bg-color);
     font-family: 'Space Mono Bold Italic';
     font-weight: 700;
     font-style: normal;
 } 
+
+a {
+    text-decoration: none;
+    color: var(--black-color);
+    transform-origin: center;
+}
+
+ul, ol {
+    text-decoration: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+*:focus { 
+    outline: none;
+}
+
+textarea {
+    resize: none;
+}
 
 @font-face {
     font-family: 'Poppins Light';
@@ -66,4 +89,50 @@ body {
          url('assets/fonts/SpaceMono-Italic.woff2') format('woff2');
     font-weight: 400;
     font-style: italic;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    padding: 0 146px;
+    .header__logo a img {
+        height: 14px;
+        width:216px;
+    }
+    .menu {
+        font-family: 'Space Mono Regular';
+        font-weight: 400;
+        font-style: normal;
+        font-size: 16px;
+        text-transform: uppercase;
+        text-align: center;
+        a:hover{
+            font-weight: 700;
+        }
+    }
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    height: 40px;
+    width: 100%;
+    border-top: 1px solid var(--black-color);
+    ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 7px;
+        font-family: 'Space Mono Regular';
+        font-weight: 400;
+        font-style: normal;
+        font-size: 16px;
+        text-transform: uppercase;
+        li a:hover {
+            font-weight: 700;
+        }
+    }
 }
