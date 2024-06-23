@@ -27,6 +27,7 @@ body {
   font-family: "Space Mono Bold Italic";
   font-weight: 700;
   font-style: normal;
+  color: var(--black-color);
 }
 
 a {
@@ -42,12 +43,18 @@ ul, ol {
   padding: 0;
 }
 
-*:focus {
-  outline: none;
+input, textarea, label {
+  box-sizing: content-box;
+  margin: 0;
+  padding: 0;
 }
 
 textarea {
   resize: none;
+}
+
+*:focus {
+  outline: none;
 }
 
 @font-face {
@@ -80,6 +87,13 @@ textarea {
   font-weight: 400;
   font-style: italic;
 }
+h2 {
+  font-family: "Space Mono Italic";
+  font-size: 66px;
+  line-height: 58px;
+  text-transform: uppercase;
+}
+
 .header {
   display: flex;
   flex-direction: row;
@@ -98,6 +112,12 @@ textarea {
   font-style: normal;
   font-size: 16px;
   text-transform: uppercase;
+}
+.header .menu .menu__list {
+  display: flex;
+  gap: 45px;
+}
+.header .menu .menu__list li {
   text-align: center;
 }
 .header .menu a:hover {
@@ -115,15 +135,99 @@ textarea {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  gap: 86px;
   margin-top: 7px;
   font-family: "Space Mono Regular";
   font-weight: 400;
   font-style: normal;
   font-size: 16px;
   text-transform: uppercase;
+  text-align: center;
+  transition: font-weight 300ms ease-in-out;
 }
 .footer ul li a:hover {
   font-weight: 700;
+}
+
+.contact__layout {
+  z-index: 2;
+  position: fixed;
+  visibility: hidden;
+  overflow: hidden;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  transition: opacity 500ms ease 0s, visibility 0s linear 500ms;
+}
+.contact__layout.active {
+  visibility: visible;
+  opacity: 1;
+  transition-delay: 0s;
+}
+.contact__layout .contact__popup {
+  overflow: hidden;
+  width: 597px;
+  height: 769px;
+  border: 5px solid var(--black-color);
+  background-color: var(--bg-color);
+}
+.contact__layout .contact__popup .contact__title h2 {
+  margin: 0 0 0 -15px;
+  padding: 0;
+}
+.contact__layout .contact__popup .contact__form {
+  margin-top: 60px;
+}
+.contact__layout .contact__popup .contact__form form {
+  width: 263px;
+  margin: auto;
+}
+.contact__layout .contact__popup .contact__form form input, .contact__layout .contact__popup .contact__form form textarea, .contact__layout .contact__popup .contact__form form p, .contact__layout .contact__popup .contact__form form label, .contact__layout .contact__popup .contact__form form span {
+  width: 255px;
+}
+.contact__layout .contact__popup .contact__form form input {
+  height: 32px;
+  padding: 4px;
+  border: 1px solid var(--mediumgrey-color);
+  border-radius: 8px;
+}
+.contact__layout .contact__popup .contact__form form input[type=submit] {
+  height: 42px;
+  background-color: var(--mediumgrey-color);
+  border-radius: 2px;
+  box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.02);
+  color: var(--black-color);
+  font-family: "Space Mono Regular";
+  font-size: 12px;
+  text-transform: none;
+  cursor: pointer;
+  transition: all 440ms;
+}
+.contact__layout .contact__popup .contact__form form input[type=submit]:hover {
+  background-color: var(--black-color);
+  color: var(--bg-color);
+}
+.contact__layout .contact__popup .contact__form form textarea {
+  padding: 4px;
+  border: 1px solid var(--darkgrey-color);
+  border-radius: 8px;
+}
+.contact__layout .contact__popup .contact__form form label {
+  font-family: "Poppins Light";
+  font-size: 12px;
+  font-style: normal;
+  text-transform: uppercase;
+}
+.contact__layout .contact__popup .contact__form form label span {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
 }
 
 /*# sourceMappingURL=style.css.map */
