@@ -53,6 +53,11 @@ textarea {
   resize: none;
 }
 
+button {
+  background-color: transparent;
+  border: none;
+}
+
 *:focus {
   outline: none;
 }
@@ -94,36 +99,6 @@ h2 {
   text-transform: uppercase;
 }
 
-.header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  height: 80px;
-  padding: 0 146px;
-}
-.header .header__logo a img {
-  height: 14px;
-  width: 216px;
-}
-.header .menu {
-  font-family: "Space Mono Regular";
-  font-weight: 400;
-  font-style: normal;
-  font-size: 16px;
-  text-transform: uppercase;
-}
-.header .menu .menu__list {
-  display: flex;
-  gap: 45px;
-}
-.header .menu .menu__list li {
-  text-align: center;
-}
-.header .menu a:hover {
-  font-weight: 700;
-}
-
 .footer {
   position: absolute;
   bottom: 0;
@@ -147,6 +122,56 @@ h2 {
 }
 .footer ul li a:hover {
   font-weight: 700;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  padding: 0 146px;
+}
+.header .header__logo a img {
+  height: 14px;
+  width: 216px;
+}
+.header .menu {
+  font-family: "Space Mono Regular";
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+.header .menu .menu__list {
+  display: flex;
+  gap: 45px;
+}
+@media (max-width: 1020px) {
+  .header .menu .menu__list {
+    display: none;
+  }
+}
+.header .menu .menu__list li {
+  text-align: center;
+}
+.header .menu a:hover {
+  font-weight: 700;
+}
+.header .menu .menu__burger {
+  width: 28px;
+  height: 19px;
+  display: none;
+  background-image: url(./assets/images/Menu_burger.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  cursor: pointer;
+}
+@media (max-width: 1020px) {
+  .header .menu .menu__burger {
+    display: block;
+  }
 }
 
 .contact__layout {
@@ -176,6 +201,11 @@ h2 {
   height: 769px;
   border: 5px solid var(--black-color);
   background-color: var(--bg-color);
+}
+@media (max-width: 650px) {
+  .contact__layout .contact__popup {
+    width: 286px;
+  }
 }
 .contact__layout .contact__popup .contact__title h2 {
   margin: 0 0 0 -15px;
