@@ -100,8 +100,6 @@ h2 {
 }
 
 .footer {
-  position: absolute;
-  bottom: 0;
   height: 40px;
   width: 100%;
   border-top: 1px solid var(--black-color);
