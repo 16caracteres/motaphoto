@@ -99,6 +99,13 @@ h2 {
   text-transform: uppercase;
 }
 
+h4 {
+  font-family: "Space Mono Regular";
+  font-weight: 400;
+  font-size: 1.125rem;
+  text-transform: uppercase;
+}
+
 button {
   height: 42px;
   width: 272px;
@@ -117,33 +124,33 @@ button:hover {
   color: var(--bg-color);
 }
 
-.photo__list {
+.photo__single {
   width: 75vw;
   margin: auto;
   padding-top: 38px;
 }
-.photo__list .photo__container {
+.photo__single .photo__container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 3%;
   border-bottom: solid var(--black-color) 1px;
 }
-.photo__list .photo__container div {
+.photo__single .photo__container div {
   width: 48%;
 }
-.photo__list .photo__container .photo__data {
+.photo__single .photo__container .photo__data {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   gap: 2%;
   border-bottom: solid var(--black-color) 1px;
 }
-.photo__list .photo__container .photo__data .photo__title {
+.photo__single .photo__container .photo__data .photo__title {
   margin: 0;
   width: 20vw;
 }
-.photo__list .photo__container .photo__data .photo__dataList {
+.photo__single .photo__container .photo__data .photo__dataList {
   font-family: "Space Mono Regular";
   text-transform: uppercase;
   font-size: 0.875rem;
@@ -151,27 +158,65 @@ button:hover {
   line-height: 2.5rem;
   padding-bottom: 20px;
 }
-.photo__list .photo__container .photo__thumbnail img {
+.photo__single .photo__container .photo__thumbnail img {
   object-fit: cover;
   width: 100%;
   height: 100%;
 }
 @media (max-width: 1020px) {
-  .photo__list .photo__container .photo__thumbnail img {
+  .photo__single .photo__container .photo__thumbnail img {
     order: -1;
   }
 }
-.photo__list .photo__container .photo__contact, .photo__list .photo__container .photo__pagination {
+.photo__single .photo__container .photo__contact {
   height: 118px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.photo__list .photo__container .photo__contact p, .photo__list .photo__container .photo__pagination p {
+.photo__single .photo__container .photo__contact p {
   font-family: "Poppins Light";
   font-size: 0.875rem;
   font-weight: 300;
   text-transform: uppercase;
+}
+.photo__single .photo__container .photo__pagination {
+  height: 118px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+.photo__single .photo__container .photo__pagination .photo__preview {
+  width: 81px;
+  height: 71px;
+}
+.photo__single .photo__container .photo__pagination .photo__preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.photo__single .photo__container .photo__pagination .photo__preview .photo__preview-next, .photo__single .photo__container .photo__pagination .photo__preview .photo__preview-previous {
+  display: none;
+  opacity: 0;
+  transition: all 500ms ease;
+}
+.photo__single .photo__container .photo__pagination .photo__preview .photo__preview-next.visible, .photo__single .photo__container .photo__pagination .photo__preview .photo__preview-previous.visible {
+  display: block;
+  opacity: 1;
+}
+.photo__single .photo__container .photo__pagination .pagination__arrows {
+  width: 81px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.photo__single .photo__container .photo__pagination .pagination__arrows div {
+  width: 26px;
+}
+.photo__single .photos__suggestion {
+  margin: 77px 0;
 }
 
 .footer {

@@ -110,6 +110,13 @@ h2 {
     text-transform: uppercase;
 }
 
+h4 {
+    font-family: 'Space Mono Regular';
+    font-weight: 400;
+    font-size : 1.125rem;
+    text-transform: uppercase;
+}
+
 button {
     height: 42px;
     width: 272px;
@@ -129,7 +136,7 @@ button {
 }
 
 // SINGLE
-.photo__list {
+.photo__single {
     width: 75vw;
     margin: auto;
     padding-top: 38px;
@@ -172,7 +179,7 @@ button {
                 }
             }
         }
-        .photo__contact, .photo__pagination {
+        .photo__contact {
             height: 118px;
             display: flex;
             justify-content: space-between;
@@ -183,7 +190,45 @@ button {
                 font-weight: 300;
                 text-transform: uppercase;
             }
-        }
+        } 
+        .photo__pagination {
+            height: 118px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-end;
+            .photo__preview {
+                width: 81px;
+                height: 71px;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+                .photo__preview-next, .photo__preview-previous{
+                    display: none;
+                    opacity: 0; 
+                    transition: all 500ms ease;
+                    &.visible {
+                        display: block;
+                        opacity: 1;
+                    }
+                }
+            }
+            .pagination__arrows{
+                width:81px;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                div {
+                    width: 26px;
+                }
+            }
+        }   
+    }
+    .photos__suggestion {
+        margin: 77px 0;
     }
 }
 
