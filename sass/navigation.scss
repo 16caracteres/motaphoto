@@ -1,4 +1,4 @@
-// NAVIGATION
+// NAVIGATION HEADER
 .header {
     display: flex;
     flex-direction: row;
@@ -135,4 +135,33 @@
         
     }
 
+}
+
+// NAVIGATION FOOTER
+.footer {
+    height: 40px;
+    width: 100%;
+    border-top: 1px solid var(--black-color);
+    ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 86px;
+        margin-top: 7px;
+        font-family: 'Space Mono Regular';
+        font-weight: 400;
+        font-style: normal;
+        font-size: 16px;
+        text-transform: uppercase;
+        text-align: center;
+        transition: font-weight 300ms ease-in-out;
+        li a:hover {
+            font-weight: 700;
+        }
+        @media (max-width:768px) {
+            margin: 34px 0;
+            flex-direction: column;
+            gap: 24px;
+        }
+    }
 }
