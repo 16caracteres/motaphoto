@@ -53,6 +53,11 @@ textarea {
   resize: none;
 }
 
+select {
+  margin: 0;
+  padding: 0;
+}
+
 button {
   background-color: transparent;
   border: none;
@@ -156,6 +161,22 @@ button:hover {
   color: transparent;
   -webkit-text-stroke-width: 3px;
   -webkit-text-stroke-color: var(--bg-color);
+}
+.homepage .photos {
+  width: 1440px;
+  margin: 80px auto;
+}
+.homepage .photos .photos__filters {
+  display: flex;
+}
+.homepage .photos .photos__filters form select {
+  width: 260px;
+  height: 43px;
+  padding: 0 18px;
+  font-family: "Poppins Light";
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  text-transform: uppercase;
 }
 
 .photo__single {
