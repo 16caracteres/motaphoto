@@ -94,3 +94,12 @@ function motaphoto_post_types() {
     register_taxonomy( 'format-photos', 'photos', $args );
 }
 add_action( 'init', 'motaphoto_post_types' );
+
+// Requête Ajax pour le bouton Charger plus
+
+add_action( 'wp_ajax_motaphoto_loadmore', 'motaphoto_loadmore' );
+add_action( 'wp_ajax_nopriv_motaphoto_loadmore', 'motaphoto_loadmore' );
+
+function motaphoto_loadmore () {
+    
+}

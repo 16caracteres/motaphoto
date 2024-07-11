@@ -52,7 +52,7 @@
 	
 
 
-    <!-- Template part Vous aimerez aussi -->
+    <!-- Vous aimerez aussi -->
     <section class="photos__suggestion">
         <h4>Vous aimerez aussi</h4>
         <div class="photo__list">

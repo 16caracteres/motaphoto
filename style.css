@@ -136,9 +136,6 @@ button:hover {
   color: var(--bg-color);
 }
 
-.homepage {
-  width: 100vw;
-}
 .homepage .photos__hero {
   position: relative;
   width: 100%;
@@ -163,20 +160,36 @@ button:hover {
   -webkit-text-stroke-color: var(--bg-color);
 }
 .homepage .photos {
-  width: 1440px;
+  max-width: 1440px;
   margin: 80px auto;
 }
-.homepage .photos .photos__filters {
+.homepage .photos .photos__filters form {
   display: flex;
+  justify-content: space-between;
 }
-.homepage .photos .photos__filters form select {
+.homepage .photos .photos__filters form div select {
   width: 260px;
   height: 43px;
-  padding: 0 18px;
+  padding: 13px 18px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url("assets/images/chevron_down.png") 93% 48% no-repeat transparent;
+  border: 1.3px solid var(--darkgrey-color);
+  border-radius: 8px;
   font-family: "Poppins Light";
   font-size: 0.75rem;
   line-height: 1.125rem;
   text-transform: uppercase;
+  cursor: pointer;
+}
+.homepage .photos .photos__filters form div select option {
+  background-color: var(--bg-color);
+  border: none;
+}
+.homepage .photos .button__loadmore {
+  display: flex;
+  justify-content: center;
 }
 
 .photo__single {
