@@ -160,7 +160,7 @@ button:hover {
   -webkit-text-stroke-color: var(--bg-color);
 }
 .homepage .photos {
-  max-width: 1440px;
+  max-width: 75vw;
   margin: 80px auto;
 }
 .homepage .photos .photos__filters form {
@@ -324,7 +324,7 @@ button:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 20px;
+  gap: 20px 0;
   margin-top: 50px;
   margin-bottom: 100px;
 }

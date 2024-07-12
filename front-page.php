@@ -22,7 +22,7 @@
                             $output .= '<select name="" id="">';
                             $output .= '<option value="categories">Catégories</option>';
                             foreach ($terms as $term) {
-                                $output .= '<option value="' . esc_attr($term->slug) . '">' . esc_html($term->name) . '</option>';
+                                $output .= '<option class="categories__value-item" value="' . esc_attr($term->slug) . '" data-slug="' . esc_attr($term->slug) . '" data-type="photos">' . esc_html($term->name) . '</option>';
                             }
                             $output .= '</select>';
                         }
@@ -44,7 +44,7 @@
                             $output .= '<select name="" id="">';
                             $output .= '<option value="formats">Formats</option>';
                             foreach ($terms as $term) {
-                                $output .= '<option value="' . esc_attr($term->slug) . '">' . esc_html($term->name) . '</option>';
+                                $output .= '<option class="format__value-item" value="' . esc_attr($term->slug) . '">' . esc_html($term->name) . '</option>';
                             }
                             $output .= '</select>';
                         }
@@ -71,8 +71,9 @@
                     'post_type' => 'photos',
                     'posts_per_page' => 8,
                     'post_status' => 'publish',
-                    'paged' => 1,
-                    'order' => 'date'
+                    'order' => 'date',
+                    'order_by' => 'desc',
+                    'paged' => 1
                 );
 
                 $homepage_query = new WP_Query( $args );
@@ -90,15 +91,7 @@
         </div>
 
         <div class="button__loadmore">
-            <button
-                class="js__loadmore"
-                data-postid="<?php echo get_the_ID(); ?>"
-                data-nonce="<?php echo wp_create_nonce('motaphoto_loadmore'); ?>"
-                data-action="motaphoto_loadmore"
-                data-ajaxurl="<?php echo admin_url( 'admin-ajax.php' ); ?>"
-            >
-            Charger plus
-            </button>
+            <button class="js__loadmore" data-nonce="<?php echo wp_create_nonce('motaphoto_loadmore_nonce'); ?>">Charger plus</button>
         </div>
 
     </section>

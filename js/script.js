@@ -61,7 +61,59 @@ if (previousPhoto && nextPhoto) {
 
 
 // Bouton Charger plus
-const boutonLoadMore = document.querySelector('.js__loadmore');
+jQuery(document).ready(function($) {
+
+    function loadMore(paged, nonce) {
+        $.ajax({
+          type: 'POST',
+          url: '/wp-admin/admin-ajax.php',
+          dataType: 'json',
+          data: {
+            action: 'motaphoto_loadmore',
+            paged: paged,
+            nonce: nonce
+          },
+          success: function (response) {
+            if(paged >= response.max) {
+              $('.js__loadmore').hide();
+            }
+            $('.photo__list').append(response.html);
+          }
+        });
+      }
+
+    let newPage = 1;
+        $('.js__loadmore').on('click', function(){
+            const nonce = $(this).data('nonce');
+            loadMore(newPage + 1, nonce);
+            newPage++;
+    });
+
+    /*let currentPage = 1;
+    $('.js__loadmore').on('click', function() {
+            console.log('click btn charger plus');
+
+            currentPage++;
+
+            $.ajax({
+                type: 'POST',
+                url: '/wp-admin/admin-ajax.php',
+                dataType: 'json',
+                data: {
+                    action: 'motaphoto_loadmore',
+                    paged: currentPage,
+                },
+                success: function (response) {
+                    if(paged >= response.max) {
+                        $('.js__loadmore').hide();
+                    }
+                    $('.photo__list').append(response);
+                }
+            });
+      });*/
+});
+
+/*const boutonLoadMore = document.querySelector('.js__loadmore');
 let page = 2;
 
 boutonLoadMore.addEventListener("click", (event) => {
@@ -77,7 +129,7 @@ boutonLoadMore.addEventListener("click", (event) => {
     }
     console.log(data);
 
-    /*fetch(ajaxurl, {
+    fetch(ajaxurl, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
@@ -86,5 +138,26 @@ boutonLoadMore.addEventListener("click", (event) => {
         body: new URLSearchParams(data),
     })
     .then(response => response.json())
-    .then(body => {*/
-})
+    .then(body => {
+})*/
+
+// Filtres
+/*jQuery(document).ready(function($) {
+    $('.categories__value-item').on('click', function() {
+
+        console.log("plop plop");
+    
+        $.ajax({
+        type: 'POST',
+        url: '/wp-admin/admin-ajax.php',
+        dataType: 'html',
+        data: {
+            action: 'motaphoto_filter_categories',
+            category: $(this).data('slug'),
+        },
+        success: function(response) {
+            $('.photo__list').html(response);
+        }
+        })
+    })
+});*/
