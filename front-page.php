@@ -7,7 +7,7 @@
     </section>
     <section class="photos">
         <div class="photos__filters">
-            <form action="">
+            <form id="filters__form" action="">
                 <div class="filters__left">
                     <?php
                         $taxonomy = 'categorie-photos';
@@ -19,15 +19,14 @@
                         $output = '';
 
                         if (!empty($terms) && !is_wp_error($terms)) {
-                            $output .= '<select name="" id="">';
-                            $output .= '<option value="categories">Catégories</option>';
+                            $output .= '<select name="filter__categories" id="filter__categories">';
+                            $output .= '<option value="">Catégories</option>';
                             foreach ($terms as $term) {
                                 $output .= '<option class="categories__value-item" value="' . esc_attr($term->slug) . '" data-slug="' . esc_attr($term->slug) . '" data-type="photos">' . esc_html($term->name) . '</option>';
                             }
                             $output .= '</select>';
                         }
 
-                        // Afficher le sélecteur
                         echo $output;
                     ?>
                     
@@ -41,24 +40,23 @@
                         $output = '';
 
                         if (!empty($terms) && !is_wp_error($terms)) {
-                            $output .= '<select name="" id="">';
-                            $output .= '<option value="formats">Formats</option>';
+                            $output .= '<select name="filter__formats" id="filter__formats">';
+                            $output .= '<option value="">Formats</option>';
                             foreach ($terms as $term) {
-                                $output .= '<option class="format__value-item" value="' . esc_attr($term->slug) . '">' . esc_html($term->name) . '</option>';
+                                $output .= '<option class="formats__value-item" value="' . esc_attr($term->slug) . '">' . esc_html($term->name) . '</option>';
                             }
                             $output .= '</select>';
                         }
 
-                        // Afficher le sélecteur
                         echo $output;
                     ?>
 
                 </div>
                 <div class="filters__right">
-                    <select name="" id="">
+                    <select name="filters__trier-par" id="filters__trier-par">
                         <option value="trier-par">Trier par</option>
                         <option value="plus-recentes">À partir des plus récentes</option>
-                        <option value="plus-recentes">À partir des plus anciennes</option> 
+                        <option value="plus-anciennes">À partir des plus anciennes</option> 
                     </select>
                 </div>
                 

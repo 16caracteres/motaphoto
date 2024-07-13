@@ -106,36 +106,63 @@ add_action( 'wp_ajax_nopriv_motaphoto_loadmore', 'motaphoto_loadmore' );
 function motaphoto_loadmore () {
     check_ajax_referer('motaphoto_loadmore_nonce', 'nonce');
 
-    $ajaxposts = new WP_Query([
+    $categorie = isset($_POST['categorie']) ? sanitize_text_field($_POST['categorie']) : '';
+    $format = isset($_POST['format']) ? sanitize_text_field($_POST['format']) : '';
+    $order = isset($_POST['order']) ? sanitize_text_field($_POST['order']) : 'DESC';
+    $paged = isset($_POST['paged']) ? intval($_POST['paged']) : 1;
+
+    error_log('Categorie: ' . $categorie); // Pour journaliser les données
+    error_log('Format: ' . $format);
+    error_log('Order: ' . $order);
+    error_log('Paged: ' . $paged);
+
+    $args = [
         'post_type' => 'photos',
         'posts_per_page' => 8,
         'post_status' => 'publish',
         'orderby' => 'date',
-        'order' => 'DESC',
-        'paged' => $_POST['paged'],
-    ]);
+        'order' => $order,
+        'paged' => $paged,
+    ];
     
+    if ($categorie) {
+        $args['tax_query'][] = [
+            'taxonomy' => 'categorie-photos',
+            'field' => 'slug',
+            'terms' => $categorie,
+        ];
+    }
+
+    if ($format) {
+        $args['tax_query'][] = [
+            'taxonomy' => 'format-photos',
+            'field' => 'slug',
+            'terms' => $format,
+        ];
+    }
+
+    $ajaxposts = new WP_Query($args);
+
     $response = '';
     $max_pages = $ajaxposts->max_num_pages;
     
     if($ajaxposts->have_posts()) {
         ob_start();
         while($ajaxposts->have_posts()) : $ajaxposts->the_post();
-            $response .= get_template_part( 'parts/photos_list' );
+            get_template_part( 'parts/photos_list' );
         endwhile;
-        $output = ob_get_contents();
+        $response = ob_get_contents();
         ob_end_clean();
-    } else {
-        $response = '';
     }
+
 
     $result = [
         'max' => $max_pages,
-        'html' => $output
+        'html' => $response
     ];
 
     echo json_encode($result);
-    exit;
+    wp_die();
 }
 
 

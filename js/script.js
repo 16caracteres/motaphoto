@@ -63,7 +63,7 @@ if (previousPhoto && nextPhoto) {
 // Bouton Charger plus
 jQuery(document).ready(function($) {
 
-    function loadMore(paged, nonce) {
+    function loadMore(paged, nonce, categorie, format, order) {
         $.ajax({
           type: 'POST',
           url: '/wp-admin/admin-ajax.php',
@@ -71,22 +71,52 @@ jQuery(document).ready(function($) {
           data: {
             action: 'motaphoto_loadmore',
             paged: paged,
-            nonce: nonce
+            nonce: nonce,
+            categorie: categorie,
+            format: format,
+            order: order
           },
           success: function (response) {
+            console.log('AJAX Response:', response);
             if(paged >= response.max) {
               $('.js__loadmore').hide();
             }
-            $('.photo__list').append(response.html);
-          }
+            if (paged === 1) {
+                $('.photo__list').html(response.html);
+            } else {
+                $('.photo__list').append(response.html);
+            }
+          },
+          error: function(jqXHR, textStatus, errorThrown) {
+            console.log("Erreur AJAX : " + textStatus + ", " + errorThrown);
+            }
         });
       }
 
     let newPage = 1;
-        $('.js__loadmore').on('click', function(){
-            const nonce = $(this).data('nonce');
-            loadMore(newPage + 1, nonce);
-            newPage++;
+    $('.js__loadmore').on('click', function(){
+        const nonce = $(this).data('nonce');
+        const categorie = $('#filter__categories').val();
+        const format = $('#filter__formats').val();
+        const order = $('#filters__trier-par').val() === 'plus-anciennes' ? 'ASC' : 'DESC';
+        
+        loadMore(newPage + 1, nonce, categorie, format, order);
+        newPage++;
+
+        console.log('clic sur le bouton charger plus');
+    });
+
+    $('#filters__form select').on('change', function(){
+        newPage = 1;
+        const nonce = $('.js__loadmore').data('nonce');
+        const categorie = $('#filter__categories').val();
+        const format = $('#filter__formats').val();
+        const order = $('#filters__trier-par').val() === 'plus-anciennes' ? 'ASC' : 'DESC';
+        
+        $('.photo__list').html('');
+        loadMore(newPage, nonce, categorie, format, order);
+
+        console.log('clic sur un filtre');
     });
 
     /*let currentPage = 1;
