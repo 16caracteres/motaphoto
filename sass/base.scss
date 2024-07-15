@@ -1,0 +1,139 @@
+
+:root{
+    --main-red-color: #E00000;
+    --sec-red-color: #FE5858;
+    --third-red-color: #FFD6D6;
+    --black-color: #000;
+    --darkblue-color: #313144;
+    --darkgrey-color: #C4C4C4;
+    --mediumgrey-color: #D8D8D8;
+    --lightgrey-color: #E5E5E5;
+    --bg-color:#FFF;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    font-family: 'Space Mono Bold Italic';
+    font-weight: 700;
+    font-style: normal;
+    color: var(--black-color);
+} 
+
+a {
+    text-decoration: none;
+    color: var(--black-color);
+    transform-origin: center;
+}
+
+ul, ol {
+    text-decoration: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+input, textarea, label {
+    box-sizing: content-box;
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    resize: none;
+}
+
+select {
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+}
+
+*:focus { 
+    outline: none;
+}
+
+@font-face {
+    font-family: 'Poppins Light';
+    src: url('assets/fonts/Poppins-Light.ttf') format('truetype'), 
+         url('assets/fonts/Poppins-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Space Mono Bold';
+    src: url('assets/fonts/SpaceMono-Bold.ttf') format('truetype'),
+         url('assets/fonts/SpaceMono-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Space Mono Bold Italic';
+    src: url('assets/fonts/SpaceMono-BoldItalic.ttf') format('truetype'),
+         url('assets/fonts/SpaceMono-BoldItalic.woff2') format('woff2');
+    font-weight: 700;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Space Mono Regular';
+    src: url('assets/fonts/SpaceMono-Regular.ttf') format('truetype'),
+         url('assets/fonts/SpaceMono-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Space Mono Italic';
+    src: url('assets/fonts/SpaceMono-Italic.ttf') format('truetype'),
+         url('assets/fonts/SpaceMono-Italic.woff2') format('woff2');
+    font-weight: 400;
+    font-style: italic;
+}
+
+h1 {
+    font-family: 'Space Mono Bold Italic';
+    font-size: 6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-family: 'Space Mono Italic';
+    font-size: 4.125rem;
+    line-height: 3.625rem;
+    text-transform: uppercase;
+}
+
+h4 {
+    font-family: 'Space Mono Regular';
+    font-weight: 400;
+    font-size : 1.125rem;
+    text-transform: uppercase;
+}
+
+button {
+    height: 42px;
+    width: 272px;
+    background-color: var(--mediumgrey-color);
+    border-radius: 2px;
+    box-shadow: 0px 2px 1px 0px rgba(0,0,0,0.02);
+    color: var(--black-color);
+    font-family: 'Space Mono Regular';
+    font-size: 12px;
+    text-transform: none;
+    cursor: pointer;
+    transition: all 440ms;
+    &:hover{
+        background-color: var(--black-color);
+        color: var(--bg-color);
+    }
+}

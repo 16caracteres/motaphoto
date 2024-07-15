@@ -58,6 +58,8 @@ function motaphoto_loadmore () {
         endwhile;
         $response = ob_get_contents();
         ob_end_clean();
+    } else {
+        $response = '<p class="photo__no-results">Aucune image ne correspond à vos critères.</p>';
     }
 
 

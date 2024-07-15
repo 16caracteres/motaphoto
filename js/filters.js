@@ -58,9 +58,10 @@ jQuery(document).ready(function($) {
         console.log('clic sur un filtre');
     });
 
-    // Select2
-    $('#filter__categories').select2();
-    $('#filter__formats').select2();
+    // Nice Select
+    $('#filter__categories').niceSelect();
+    $('#filter__formats').niceSelect();
+    $('#filters__trier-par').niceSelect();
 
     /*let currentPage = 1;
     $('.js__loadmore').on('click', function() {

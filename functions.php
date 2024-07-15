@@ -27,10 +27,10 @@ function motaphoto_assets() {
     );
 
     wp_enqueue_script( 
-        'select2-js', 
-        get_template_directory_uri() . '/assets/libraries/select2/js/select2.min.js', 
+        'nice-select-js', 
+        get_template_directory_uri() . '/assets/libraries/nice-select/js/jquery.nice-select.min.js', 
         array( 'jquery' ), 
-        '4.1.0-rc.0', 
+        '1.1.0', 
         array( 
             'strategy'  => 'defer',
         )
@@ -45,10 +45,10 @@ function motaphoto_assets() {
     );
 
     wp_enqueue_style(
-        'select2-custom-css', 
-        get_template_directory_uri() . '/assets/libraries/select2/css/select2.min.css', 
+        'nice-select-css', 
+        get_template_directory_uri() . '/assets/libraries/nice-select/css/nice-select.css', 
         array(),
-        '4.1.0-rc.0'
+        '1.1.0'
     );
 
 }

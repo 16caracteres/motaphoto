@@ -136,271 +136,6 @@ button:hover {
   color: var(--bg-color);
 }
 
-.homepage .photos__hero {
-  position: relative;
-  width: 100%;
-  height: 962px;
-}
-@media (max-width: 1024px) {
-  .homepage .photos__hero {
-    height: 40vh;
-  }
-}
-.homepage .photos__hero img {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.homepage .photos__hero .hero__title {
-  position: absolute;
-  width: 1000px;
-  height: 142px;
-  margin: 0;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: transparent;
-  -webkit-text-stroke-width: 3px;
-  -webkit-text-stroke-color: var(--bg-color);
-}
-@media (max-width: 1024px) {
-  .homepage .photos__hero .hero__title {
-    width: 500px;
-    height: 60px;
-    font-size: 3rem;
-    -webkit-text-stroke-width: 2px;
-  }
-}
-@media (max-width: 768px) {
-  .homepage .photos__hero .hero__title {
-    width: 295px;
-    height: 41px;
-    font-size: 1.75rem;
-    -webkit-text-stroke-width: 1px;
-  }
-}
-.homepage .photos {
-  max-width: 75vw;
-  margin: 80px auto;
-}
-@media (max-width: 1024px) {
-  .homepage .photos {
-    margin: 30px auto 65px auto;
-  }
-}
-.homepage .photos .photos__filters form {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 20px;
-}
-@media (max-width: 1024px) {
-  .homepage .photos .photos__filters form {
-    width: 260px;
-    margin: auto;
-    justify-content: center;
-  }
-}
-.homepage .photos .photos__filters form div {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-@media (max-width: 1024px) {
-  .homepage .photos .photos__filters form div {
-    justify-content: center;
-  }
-}
-.homepage .photos .photos__filters form div select {
-  width: 260px;
-  height: 43px;
-  padding: 13px 18px;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: url("assets/images/chevron_down.png") 93% 48% no-repeat transparent;
-  border: 1.3px solid var(--darkgrey-color);
-  border-radius: 8px;
-  font-family: "Poppins Light";
-  font-size: 0.75rem;
-  line-height: 1.125rem;
-  text-transform: uppercase;
-  cursor: pointer;
-}
-.homepage .photos .photos__filters form div select option {
-  background-color: var(--bg-color);
-  border: none;
-}
-.homepage .photos .button__loadmore {
-  display: flex;
-  justify-content: center;
-}
-@media (max-width: 1024px) {
-  .homepage .photos .button__loadmore {
-    margin-top: 55px;
-  }
-}
-
-.photo__single {
-  width: 75vw;
-  margin: auto;
-  padding-top: 38px;
-}
-.photo__single .photo__container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 3%;
-  border-bottom: solid var(--black-color) 1px;
-}
-.photo__single .photo__container div {
-  width: 48%;
-}
-@media (max-width: 1024px) {
-  .photo__single .photo__container div {
-    width: 100%;
-  }
-}
-.photo__single .photo__container .photo__data {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  gap: 2%;
-  border-bottom: solid var(--black-color) 1px;
-}
-.photo__single .photo__container .photo__data .photo__title {
-  margin: 0;
-  width: 20vw;
-}
-.photo__single .photo__container .photo__data .photo__dataList {
-  font-family: "Space Mono Regular";
-  text-transform: uppercase;
-  font-size: 0.875rem;
-  font-weight: 400;
-  line-height: 2.5rem;
-  padding: 20px 0;
-}
-.photo__single .photo__container .photo__thumbnail img {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-}
-@media (max-width: 1024px) {
-  .photo__single .photo__container .photo__thumbnail {
-    order: -1;
-    margin-bottom: 20px;
-  }
-}
-.photo__single .photo__container .photo__contact {
-  height: 118px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.photo__single .photo__container .photo__contact p {
-  font-family: "Poppins Light";
-  font-size: 0.875rem;
-  font-weight: 300;
-}
-@media (max-width: 1024px) {
-  .photo__single .photo__container .photo__contact {
-    flex-direction: column;
-    justify-content: center;
-    gap: 10px;
-  }
-  .photo__single .photo__container .photo__contact p {
-    margin: 0;
-    width: 272px;
-    text-align: left;
-  }
-}
-.photo__single .photo__container .photo__pagination {
-  height: 118px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-end;
-}
-@media (max-width: 1024px) {
-  .photo__single .photo__container .photo__pagination {
-    display: none;
-  }
-}
-.photo__single .photo__container .photo__pagination .photo__preview {
-  position: relative;
-  width: 81px;
-  height: 71px;
-}
-.photo__single .photo__container .photo__pagination .photo__preview img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.photo__single .photo__container .photo__pagination .photo__preview .photo__preview-next, .photo__single .photo__container .photo__pagination .photo__preview .photo__preview-previous {
-  position: absolute;
-  display: block;
-  pointer-events: none;
-  opacity: 0;
-  transition: all 300ms ease;
-}
-.photo__single .photo__container .photo__pagination .photo__preview .photo__preview-next.visible, .photo__single .photo__container .photo__pagination .photo__preview .photo__preview-previous.visible {
-  display: block;
-  opacity: 1;
-}
-.photo__single .photo__container .photo__pagination .pagination__arrows {
-  width: 81px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-.photo__single .photo__container .photo__pagination .pagination__arrows div {
-  width: 26px;
-}
-.photo__single .photos__suggestion {
-  margin: 77px 0;
-}
-@media (max-width: 1024px) {
-  .photo__single .photos__suggestion {
-    margin: 24px 0;
-  }
-  .photo__single .photos__suggestion h4 {
-    text-align: center;
-  }
-}
-
-.photo__list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 20px 0;
-  margin-top: 50px;
-  margin-bottom: 100px;
-}
-@media (max-width: 1024px) {
-  .photo__list {
-    margin: 24px 0;
-  }
-}
-.photo__list .photo__link {
-  width: 49%;
-  height: 495px;
-}
-.photo__list .photo__link img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-@media (max-width: 1024px) {
-  .photo__list .photo__link {
-    width: 100%;
-    height: 279px;
-  }
-}
-
 .header {
   display: flex;
   flex-direction: row;
@@ -571,6 +306,294 @@ button:hover {
     flex-direction: column;
     gap: 24px;
   }
+}
+
+.homepage .photos__hero {
+  position: relative;
+  width: 100%;
+  height: 962px;
+}
+@media (max-width: 1024px) {
+  .homepage .photos__hero {
+    height: 40vh;
+  }
+}
+.homepage .photos__hero img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.homepage .photos__hero .hero__title {
+  position: absolute;
+  width: 1000px;
+  height: 142px;
+  margin: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: transparent;
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: var(--bg-color);
+}
+@media (max-width: 1024px) {
+  .homepage .photos__hero .hero__title {
+    width: 500px;
+    height: 60px;
+    font-size: 3rem;
+    -webkit-text-stroke-width: 2px;
+  }
+}
+@media (max-width: 768px) {
+  .homepage .photos__hero .hero__title {
+    width: 295px;
+    height: 41px;
+    font-size: 1.75rem;
+    -webkit-text-stroke-width: 1px;
+  }
+}
+.homepage .photos {
+  max-width: 75vw;
+  margin: 80px auto;
+}
+@media (max-width: 1024px) {
+  .homepage .photos {
+    margin: 30px auto 65px auto;
+  }
+}
+.homepage .photos .photos__filters form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+@media (max-width: 1024px) {
+  .homepage .photos .photos__filters form {
+    width: 260px;
+    margin: auto;
+    justify-content: center;
+  }
+}
+.homepage .photos .photos__filters form div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+@media (max-width: 1024px) {
+  .homepage .photos .photos__filters form div {
+    justify-content: center;
+  }
+}
+.homepage .photos .photos__filters form div select, .homepage .photos .photos__filters form div .nice-select {
+  width: 260px;
+  height: 43px;
+  padding: 13px 18px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 1.3px solid var(--darkgrey-color);
+  border-radius: 8px;
+  font-family: "Poppins Light";
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.homepage .photos .photos__filters form div select .list, .homepage .photos .photos__filters form div .nice-select .list {
+  box-shadow: none;
+  border-radius: 8px;
+  margin-left: -1px;
+}
+.homepage .photos .photos__filters form div select option, .homepage .photos .photos__filters form div select .option, .homepage .photos .photos__filters form div .nice-select option, .homepage .photos .photos__filters form div .nice-select .option {
+  width: 260px;
+  background-color: var(--bg-color);
+  border: none;
+  text-transform: none;
+}
+.homepage .photos .photos__filters form div select .option:hover, .homepage .photos .photos__filters form div .nice-select .option:hover {
+  background-color: var(--third-red-color);
+}
+.homepage .photos .photos__filters form div select:after, .homepage .photos .photos__filters form div .nice-select:after {
+  width: 8px;
+  height: 8px;
+  top: 45%;
+  right: 18px;
+  border-bottom: 1px solid #313144;
+  border-right: 1px solid #313144;
+}
+.homepage .photos .button__loadmore {
+  display: flex;
+  justify-content: center;
+}
+@media (max-width: 1024px) {
+  .homepage .photos .button__loadmore {
+    margin-top: 55px;
+  }
+}
+
+.photo__single {
+  width: 75vw;
+  margin: auto;
+  padding-top: 38px;
+}
+.photo__single .photo__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3%;
+  border-bottom: solid var(--black-color) 1px;
+}
+.photo__single .photo__container div {
+  width: 48%;
+}
+@media (max-width: 1024px) {
+  .photo__single .photo__container div {
+    width: 100%;
+  }
+}
+.photo__single .photo__container .photo__data {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 2%;
+  border-bottom: solid var(--black-color) 1px;
+}
+.photo__single .photo__container .photo__data .photo__title {
+  margin: 0;
+  width: 20vw;
+}
+.photo__single .photo__container .photo__data .photo__dataList {
+  font-family: "Space Mono Regular";
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 2.5rem;
+  padding: 20px 0;
+}
+.photo__single .photo__container .photo__thumbnail img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+@media (max-width: 1024px) {
+  .photo__single .photo__container .photo__thumbnail {
+    order: -1;
+    margin-bottom: 20px;
+  }
+}
+.photo__single .photo__container .photo__contact {
+  height: 118px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.photo__single .photo__container .photo__contact p {
+  font-family: "Poppins Light";
+  font-size: 0.875rem;
+  font-weight: 300;
+}
+@media (max-width: 1024px) {
+  .photo__single .photo__container .photo__contact {
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+  }
+  .photo__single .photo__container .photo__contact p {
+    margin: 0;
+    width: 272px;
+    text-align: left;
+  }
+}
+.photo__single .photo__container .photo__pagination {
+  height: 118px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+@media (max-width: 1024px) {
+  .photo__single .photo__container .photo__pagination {
+    display: none;
+  }
+}
+.photo__single .photo__container .photo__pagination .photo__preview {
+  position: relative;
+  width: 81px;
+  height: 71px;
+}
+.photo__single .photo__container .photo__pagination .photo__preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.photo__single .photo__container .photo__pagination .photo__preview .photo__preview-next, .photo__single .photo__container .photo__pagination .photo__preview .photo__preview-previous {
+  position: absolute;
+  display: block;
+  pointer-events: none;
+  opacity: 0;
+  transition: all 300ms ease;
+}
+.photo__single .photo__container .photo__pagination .photo__preview .photo__preview-next.visible, .photo__single .photo__container .photo__pagination .photo__preview .photo__preview-previous.visible {
+  display: block;
+  opacity: 1;
+}
+.photo__single .photo__container .photo__pagination .pagination__arrows {
+  width: 81px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.photo__single .photo__container .photo__pagination .pagination__arrows div {
+  width: 26px;
+}
+.photo__single .photos__suggestion {
+  margin: 77px 0;
+}
+@media (max-width: 1024px) {
+  .photo__single .photos__suggestion {
+    margin: 24px 0;
+  }
+  .photo__single .photos__suggestion h4 {
+    text-align: center;
+  }
+}
+
+.photo__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px 0;
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+@media (max-width: 1024px) {
+  .photo__list {
+    margin: 24px 0;
+  }
+}
+.photo__list .photo__link {
+  width: 49%;
+  height: 495px;
+}
+.photo__list .photo__link img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+@media (max-width: 1024px) {
+  .photo__list .photo__link {
+    width: 100%;
+    height: 279px;
+  }
+}
+.photo__list .photo__no-results {
+  margin: auto;
+  font-family: "Poppins Light";
+  font-size: 0.875rem;
+  font-weight: 300;
 }
 
 /*# sourceMappingURL=style.css.map */
