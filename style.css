@@ -141,6 +141,11 @@ button:hover {
   width: 100%;
   height: 962px;
 }
+@media (max-width: 1024px) {
+  .homepage .photos__hero {
+    height: 40vh;
+  }
+}
 .homepage .photos__hero img {
   position: absolute;
   width: 100%;
@@ -159,13 +164,55 @@ button:hover {
   -webkit-text-stroke-width: 3px;
   -webkit-text-stroke-color: var(--bg-color);
 }
+@media (max-width: 1024px) {
+  .homepage .photos__hero .hero__title {
+    width: 500px;
+    height: 60px;
+    font-size: 3rem;
+    -webkit-text-stroke-width: 2px;
+  }
+}
+@media (max-width: 768px) {
+  .homepage .photos__hero .hero__title {
+    width: 295px;
+    height: 41px;
+    font-size: 1.75rem;
+    -webkit-text-stroke-width: 1px;
+  }
+}
 .homepage .photos {
   max-width: 75vw;
   margin: 80px auto;
 }
+@media (max-width: 1024px) {
+  .homepage .photos {
+    margin: 30px auto 65px auto;
+  }
+}
 .homepage .photos .photos__filters form {
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
+  gap: 20px;
+}
+@media (max-width: 1024px) {
+  .homepage .photos .photos__filters form {
+    width: 260px;
+    margin: auto;
+    justify-content: center;
+  }
+}
+.homepage .photos .photos__filters form div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+@media (max-width: 1024px) {
+  .homepage .photos .photos__filters form div {
+    justify-content: center;
+  }
 }
 .homepage .photos .photos__filters form div select {
   width: 260px;
@@ -191,6 +238,11 @@ button:hover {
   display: flex;
   justify-content: center;
 }
+@media (max-width: 1024px) {
+  .homepage .photos .button__loadmore {
+    margin-top: 55px;
+  }
+}
 
 .photo__single {
   width: 75vw;
@@ -207,7 +259,7 @@ button:hover {
 .photo__single .photo__container div {
   width: 48%;
 }
-@media (max-width: 1020px) {
+@media (max-width: 1024px) {
   .photo__single .photo__container div {
     width: 100%;
   }
@@ -236,7 +288,7 @@ button:hover {
   width: 100%;
   height: 100%;
 }
-@media (max-width: 1020px) {
+@media (max-width: 1024px) {
   .photo__single .photo__container .photo__thumbnail {
     order: -1;
     margin-bottom: 20px;
@@ -253,7 +305,7 @@ button:hover {
   font-size: 0.875rem;
   font-weight: 300;
 }
-@media (max-width: 1020px) {
+@media (max-width: 1024px) {
   .photo__single .photo__container .photo__contact {
     flex-direction: column;
     justify-content: center;
@@ -272,7 +324,7 @@ button:hover {
   justify-content: center;
   align-items: flex-end;
 }
-@media (max-width: 1020px) {
+@media (max-width: 1024px) {
   .photo__single .photo__container .photo__pagination {
     display: none;
   }
@@ -311,7 +363,7 @@ button:hover {
 .photo__single .photos__suggestion {
   margin: 77px 0;
 }
-@media (max-width: 1020px) {
+@media (max-width: 1024px) {
   .photo__single .photos__suggestion {
     margin: 24px 0;
   }
@@ -328,7 +380,7 @@ button:hover {
   margin-top: 50px;
   margin-bottom: 100px;
 }
-@media (max-width: 1020px) {
+@media (max-width: 1024px) {
   .photo__list {
     margin: 24px 0;
   }
@@ -342,7 +394,7 @@ button:hover {
   height: 100%;
   object-fit: cover;
 }
-@media (max-width: 1020px) {
+@media (max-width: 1024px) {
   .photo__list .photo__link {
     width: 100%;
     height: 279px;
@@ -357,6 +409,11 @@ button:hover {
   height: 80px;
   padding: 0 146px;
   box-shadow: 0px 4px 14px 10px rgba(0, 0, 0, 0.03);
+}
+@media (max-width: 1020px) {
+  .header {
+    padding: 0 40px;
+  }
 }
 .header .header__logo a img {
   height: 14px;

@@ -89,7 +89,7 @@
         </div>
 
         <div class="button__loadmore">
-            <button class="js__loadmore" data-nonce="<?php echo wp_create_nonce('motaphoto_loadmore_nonce'); ?>">Charger plus</button>
+            <button class="js__loadmore" data-nonce="<?php echo wp_create_nonce('motaphoto_loadmore_nonce'); ?>" data-page="1">Charger plus</button>
         </div>
 
     </section>

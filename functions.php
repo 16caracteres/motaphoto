@@ -5,7 +5,7 @@ function motaphoto_assets() {
     // Déclarer jQuery
     wp_enqueue_script('jquery');
     
-    // Déclarer le JS
+    // Déclarer les fichiers JS
 	wp_enqueue_script( 
         'motaphoto', 
         get_template_directory_uri() . '/js/script.js', 
@@ -15,13 +15,40 @@ function motaphoto_assets() {
             'strategy'  => 'defer',
         )
     );
+
+    wp_enqueue_script( 
+        'motaphoto_filters', 
+        get_template_directory_uri() . '/js/filters.js', 
+        array( 'jquery' ), 
+        '1.0', 
+        array( 
+            'strategy'  => 'defer',
+        )
+    );
+
+    wp_enqueue_script( 
+        'select2-js', 
+        get_template_directory_uri() . '/assets/libraries/select2/js/select2.min.js', 
+        array( 'jquery' ), 
+        '4.1.0-rc.0', 
+        array( 
+            'strategy'  => 'defer',
+        )
+    );
     
-    // Déclarer le fichier style.css à la racine du thème
+    // Déclarer les fichiers de style
     wp_enqueue_style( 
         'motaphoto',
         get_stylesheet_uri(), 
         array(), 
         '1.0'
+    );
+
+    wp_enqueue_style(
+        'select2-custom-css', 
+        get_template_directory_uri() . '/assets/libraries/select2/css/select2.min.css', 
+        array(),
+        '4.1.0-rc.0'
     );
 
 }
@@ -99,115 +126,4 @@ add_action( 'init', 'motaphoto_post_types' );
 // ----------
 
 
-// Requête Ajax pour le bouton Charger plus
-add_action( 'wp_ajax_motaphoto_loadmore', 'motaphoto_loadmore' );
-add_action( 'wp_ajax_nopriv_motaphoto_loadmore', 'motaphoto_loadmore' );
-
-function motaphoto_loadmore () {
-    check_ajax_referer('motaphoto_loadmore_nonce', 'nonce');
-
-    $categorie = isset($_POST['categorie']) ? sanitize_text_field($_POST['categorie']) : '';
-    $format = isset($_POST['format']) ? sanitize_text_field($_POST['format']) : '';
-    $order = isset($_POST['order']) ? sanitize_text_field($_POST['order']) : 'DESC';
-    $paged = isset($_POST['paged']) ? intval($_POST['paged']) : 1;
-
-    error_log('Categorie: ' . $categorie); // Pour journaliser les données
-    error_log('Format: ' . $format);
-    error_log('Order: ' . $order);
-    error_log('Paged: ' . $paged);
-
-    $args = [
-        'post_type' => 'photos',
-        'posts_per_page' => 8,
-        'post_status' => 'publish',
-        'orderby' => 'date',
-        'order' => $order,
-        'paged' => $paged,
-    ];
-    
-    if ($categorie) {
-        $args['tax_query'][] = [
-            'taxonomy' => 'categorie-photos',
-            'field' => 'slug',
-            'terms' => $categorie,
-        ];
-    }
-
-    if ($format) {
-        $args['tax_query'][] = [
-            'taxonomy' => 'format-photos',
-            'field' => 'slug',
-            'terms' => $format,
-        ];
-    }
-
-    $ajaxposts = new WP_Query($args);
-
-    $response = '';
-    $max_pages = $ajaxposts->max_num_pages;
-    
-    if($ajaxposts->have_posts()) {
-        ob_start();
-        while($ajaxposts->have_posts()) : $ajaxposts->the_post();
-            get_template_part( 'parts/photos_list' );
-        endwhile;
-        $response = ob_get_contents();
-        ob_end_clean();
-    }
-
-
-    $result = [
-        'max' => $max_pages,
-        'html' => $response
-    ];
-
-    echo json_encode($result);
-    wp_die();
-}
-
-
-// ----------
-
-
-// Requête Ajax pour filtrer les photos
-/*add_action('wp_ajax_motaphoto_filter_categories', 'motaphoto_filter_categories');
-add_action('wp_ajax_nopriv_motaphoto_filter_categories', 'motaphoto_filter_categories');
-
-function motaphoto_filter_categories() {
-    $categorieSlug = sanitize_text_field($_POST['category']) ;
-    $term = get_term_by('slug', $categorieSlug, 'categorie-photos');
-    $termIds = [$term->term_id];
-
-    if(!$term) {
-        echo 'empty';
-        exit;
-    }
-
-    $ajaxposts = new WP_Query([
-      'post_type' => 'photos',
-      'posts_per_page' => -1,
-      'order' => 'desc',
-      'tax_query' => [
-            [
-                'taxonomy' => 'categorie-photos',
-                'field'    => 'term_id',
-                'terms'    => $termIds,
-                'operator' => 'IN'
-            ],
-        ]
-      
-    ]);
-    $response = '';
-  
-    if($ajaxposts->have_posts()) {
-      while($ajaxposts->have_posts()) : $ajaxposts->the_post();
-        $response .= get_template_part('parts/photos_list');
-      endwhile;
-    } else {
-      $response = 'empty';
-    }
-  
-    echo $response;
-    exit;
-  }*/
-
+include get_template_directory() . '/includes/ajax.php';
