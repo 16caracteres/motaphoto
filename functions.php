@@ -27,6 +27,16 @@ function motaphoto_assets() {
     );
 
     wp_enqueue_script( 
+        'motaphoto_lightbox', 
+        get_template_directory_uri() . '/js/lightbox.js', 
+        array( 'jquery' ), 
+        '1.0', 
+        array( 
+            'strategy'  => 'defer',
+        )
+    );
+
+    wp_enqueue_script( 
         'nice-select-js', 
         get_template_directory_uri() . '/assets/libraries/nice-select/js/jquery.nice-select.min.js', 
         array( 'jquery' ), 
