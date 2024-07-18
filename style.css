@@ -671,6 +671,7 @@ button:hover {
 }
 
 .lightbox {
+  visibility: hidden;
   position: fixed;
   z-index: 20;
   overflow: auto;
@@ -680,6 +681,9 @@ button:hover {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.85);
   animation: lightboxFadeIn 700ms;
+}
+.lightbox.visible {
+  visibility: visible;
 }
 .lightbox .lightbox__close {
   position: fixed;
@@ -721,7 +725,7 @@ button:hover {
 .lightbox button:hover {
   opacity: 1;
 }
-.lightbox .lightbox__photo {
+.lightbox .lightbox__photo-info {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -729,26 +733,26 @@ button:hover {
   margin: 0 140px;
   min-height: 100vh;
 }
-.lightbox .lightbox__photo img {
+.lightbox .lightbox__photo-info .lightbox__photo img {
   max-width: 100%;
   height: auto;
   animation: lightboxFadeIn 1400ms;
 }
-.lightbox .lightbox__photo .lightbox__info {
+.lightbox .lightbox__photo-info .lightbox__info {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
-  margin-top: 20px;
+  margin: 20px 140px 0 140px;
   color: var(--bg-color);
 }
-.lightbox .lightbox__photo .lightbox__info .lightbox__info-ref {
+.lightbox .lightbox__photo-info .lightbox__info .lightbox__info-title {
   font-family: "Poppins Light";
   font-size: 0.875rem;
   font-weight: 300;
   text-transform: uppercase;
 }
-.lightbox .lightbox__photo .lightbox__info .lightbox__info-cat {
+.lightbox .lightbox__photo-info .lightbox__info .lightbox__info-cat {
   font-family: "Space Mono Regular";
   font-size: 0.875rem;
   font-weight: 400;

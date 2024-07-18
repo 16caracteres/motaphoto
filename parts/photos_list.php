@@ -7,8 +7,8 @@
             <a href="<?php echo get_the_permalink(); ?>" class="details__icon"></a>
         </div>
         <div class="photo__link-infos">
-            <span><?php the_field( 'reference' ); ?></span>
-            <span>
+            <span class="photo__title"><?php the_title(); ?></span>
+            <span class="photo__cat">
                 <?php 
                 $terms = wp_get_post_terms( get_the_ID(), 'categorie-photos' );
 
