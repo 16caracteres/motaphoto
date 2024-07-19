@@ -142,6 +142,14 @@ function motaphoto_post_types() {
 }
 add_action( 'init', 'motaphoto_post_types' );
 
+// Ajout mention Tous droits réservés dans le menu du footer
+function footer_menu($items, $args) {
+    if ($args->theme_location == 'footer-menu') {
+            $items .= '<li>Tous droits réservés</li>';
+    }
+    return $items;
+}
+add_filter('wp_nav_menu_items', 'footer_menu', 10, 2);
 
 // ----------
 

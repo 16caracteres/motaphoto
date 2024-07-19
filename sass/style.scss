@@ -364,5 +364,22 @@ Version: 1.0
     
 }
 
+//PAGE 
+.page__container {
+    max-width: 55vw;
+    margin: 80px auto;
+    text-align: justify;
+    h2 {
+        margin: 50px 0 15px 0;
+        font-size : 2rem;
+        line-height: 1.2;
+    }
+    p {
+        font-family: "Poppins Light";
+        font-size: 0.875rem;
+        font-weight: 300;
+    }
+}
+
 // Ajout style de la lightbox
 @import "lightbox.scss";

@@ -23,11 +23,18 @@ Version: 1.0
 body {
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   background-color: var(--bg-color);
   font-family: "Space Mono Bold Italic";
   font-weight: 700;
   font-style: normal;
   color: var(--black-color);
+}
+
+main {
+  flex: 1;
 }
 
 a {
@@ -670,6 +677,22 @@ button:hover {
   letter-spacing: 1.4px;
 }
 
+.page__container {
+  max-width: 55vw;
+  margin: 80px auto;
+  text-align: justify;
+}
+.page__container h2 {
+  margin: 50px 0 15px 0;
+  font-size: 2rem;
+  line-height: 1.2;
+}
+.page__container p {
+  font-family: "Poppins Light";
+  font-size: 0.875rem;
+  font-weight: 300;
+}
+
 .lightbox {
   visibility: hidden;
   position: fixed;
@@ -679,7 +702,7 @@ button:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.85);
+  background-color: rgba(0, 0, 0, 0.8);
   animation: lightboxFadeIn 700ms;
 }
 .lightbox.visible {
