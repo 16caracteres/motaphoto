@@ -26,6 +26,10 @@
         </div>
     </div>
     <a href="<?php echo get_the_permalink(); ?>" class="photo__link">
-        <?php the_post_thumbnail(); ?>
+        <?php 
+            $thumbnail_id = get_post_thumbnail_id();
+            $thumbnail_url = wp_get_attachment_image_src($thumbnail_id, 'full')[0];
+            echo '<img src="' . esc_url($thumbnail_url) . '" data-src="' . esc_url($thumbnail_url) . '" alt="' . get_the_title() . '">';
+        ?>
     </a>
 </div>

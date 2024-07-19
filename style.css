@@ -730,7 +730,8 @@ button:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0 140px;
+  margin: 50px auto;
+  max-width: 1080px;
   min-height: 100vh;
 }
 .lightbox .lightbox__photo-info .lightbox__photo img {

@@ -2,9 +2,29 @@
 // Appel des styles et scripts
 function motaphoto_assets() {
     
-    // Déclarer jQuery
+    // Déclarer jQuery et autres bibliothèques
     wp_enqueue_script('jquery');
+
+    wp_enqueue_script( 
+        'nice-select-js', 
+        get_template_directory_uri() . '/js/libraries/nice-select/js/jquery.nice-select.min.js', 
+        array( 'jquery' ), 
+        '1.1.0', 
+        array( 
+            'strategy'  => 'defer',
+        )
+    );
     
+    wp_enqueue_script( 
+        'block-scroll-lock-js', 
+        get_template_directory_uri() . '/js/libraries/body-scroll-lock.js', 
+        array( 'jquery' ), 
+        '4.0.0', 
+        array( 
+            'strategy'  => 'defer',
+        )
+    );
+
     // Déclarer les fichiers JS
 	wp_enqueue_script( 
         'motaphoto', 
@@ -35,16 +55,6 @@ function motaphoto_assets() {
             'strategy'  => 'defer',
         )
     );
-
-    wp_enqueue_script( 
-        'nice-select-js', 
-        get_template_directory_uri() . '/assets/libraries/nice-select/js/jquery.nice-select.min.js', 
-        array( 'jquery' ), 
-        '1.1.0', 
-        array( 
-            'strategy'  => 'defer',
-        )
-    );
     
     // Déclarer les fichiers de style
     wp_enqueue_style( 
@@ -56,7 +66,7 @@ function motaphoto_assets() {
 
     wp_enqueue_style(
         'nice-select-css', 
-        get_template_directory_uri() . '/assets/libraries/nice-select/css/nice-select.css', 
+        get_template_directory_uri() . '/js/libraries/nice-select/css/nice-select.css', 
         array(),
         '1.1.0'
     );

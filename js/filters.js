@@ -25,6 +25,10 @@ jQuery(document).ready(function($) {
             } else {
                 $('.photo__list').append(response.html);
             }
+            // On réinitialise la lightbox après modification du DOM
+            if (typeof initLightbox === 'function') {
+                initLightbox();
+            }
           },
           error: function(jqXHR, textStatus, errorThrown) {
             console.log("Erreur AJAX : " + textStatus + ", " + errorThrown);
