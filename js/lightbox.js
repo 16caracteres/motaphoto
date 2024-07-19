@@ -1,7 +1,3 @@
-// Supprimer les doubles scroll
-
-
-
 //Lightbox
 function initLightbox() {
     const lightbox = document.getElementById('lightbox'); 
@@ -77,13 +73,15 @@ function initLightbox() {
         lightboxCat.innerHTML = photo.category;
         console.log(photo);
         console.log(photo.imageURL);
-        bodyScrollLock.disableBodyScroll(lightbox);// Annule scroll du body
+        // Annule scroll du body
+        bodyScrollLock.disableBodyScroll(lightbox);
     }
 
     // Evènement au clic sur le bouton Fermer qui supprimera la classe "visible" de la Lightbox
     closeLightbox.addEventListener("click", () => {
         lightbox.classList.remove('visible');
-        bodyScrollLock.enableBodyScroll(lightbox); // Remet le scroll du body
+        // Remet le scroll du body
+        bodyScrollLock.enableBodyScroll(lightbox);
     });
 
     // Evènement qui affichera l'image précédent au clic sur le bouton Précédent
