@@ -268,6 +268,12 @@ Version: 1.0
     @media (max-width:1024px) {
         margin: 24px 0;
     }
+    .photo__no-results {
+        margin: auto;
+        font-family: 'Poppins Light';
+        font-size: 0.875rem;
+        font-weight: 300;
+    }
     .photo__list-item {
         position: relative;
         width: 49%;
@@ -285,12 +291,6 @@ Version: 1.0
                 height: 100%;
                 object-fit: cover;
             }
-        }
-        .photo__no-results {
-            margin: auto;
-            font-family: 'Poppins Light';
-            font-size: 0.875rem;
-            font-weight: 300;
         }
         .photo__link-hover { // hover sur l'image
             visibility: hidden;

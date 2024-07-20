@@ -187,10 +187,8 @@ button:hover {
   width: 28px;
   height: 19px;
   display: none;
-  background-image: url(./assets/images/Menu_burger.png);
-  background-repeat: no-repeat;
+  background: url(./assets/images/Menu_burger.png) center center no-repeat;
   background-size: contain;
-  background-position: center;
   cursor: pointer;
 }
 @media (max-width: 1020px) {
@@ -198,9 +196,29 @@ button:hover {
     display: block;
   }
 }
+@media (max-width: 1020px) {
+  .header .menu .menu__list-burger {
+    display: flex;
+    position: fixed;
+    z-index: 5;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 80px);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    background-color: var(--main-red-color);
+  }
+  .header .menu .menu__list-burger li a {
+    color: var(--bg-color);
+    font-size: 2.75rem;
+  }
+}
 
 .contact__layout {
-  z-index: 2;
+  z-index: 10;
   position: fixed;
   visibility: hidden;
   overflow: hidden;
@@ -581,6 +599,12 @@ button:hover {
     margin: 24px 0;
   }
 }
+.photo__list .photo__no-results {
+  margin: auto;
+  font-family: "Poppins Light";
+  font-size: 0.875rem;
+  font-weight: 300;
+}
 .photo__list .photo__list-item {
   position: relative;
   width: 49%;
@@ -601,12 +625,6 @@ button:hover {
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-.photo__list .photo__list-item .photo__no-results {
-  margin: auto;
-  font-family: "Poppins Light";
-  font-size: 0.875rem;
-  font-weight: 300;
 }
 .photo__list .photo__list-item .photo__link-hover {
   visibility: hidden;

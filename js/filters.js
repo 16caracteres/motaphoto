@@ -1,5 +1,17 @@
 jQuery(document).ready(function($) {
 
+    // Fonction pour réinitialiser les sélecteurs au chargement de la page
+    function resetSelects() {
+        $('#filter__categories option:selected').removeAttr('selected');
+        $('#filter__formats option:selected').removeAttr('selected');
+        $('#filters__trier-par option:selected').removeAttr('selected');
+        $('#filter__categories').niceSelect('update');
+        $('#filter__formats').niceSelect('update');
+        $('#filters__trier-par').niceSelect('update');
+    }
+    // On appelle la fonction
+    resetSelects();
+
     function loadMore(paged, nonce, categorie, format, order) {
         $.ajax({
           type: 'POST',
@@ -56,7 +68,6 @@ jQuery(document).ready(function($) {
         const format = $('#filter__formats').val();
         const order = $('#filters__trier-par').val() === 'plus-anciennes' ? 'ASC' : 'DESC';
         
-        //$('.photo__list').html('');
         loadMore(newPage, nonce, categorie, format, order);
 
         console.log('clic sur un filtre');
@@ -66,6 +77,8 @@ jQuery(document).ready(function($) {
     $('#filter__categories').niceSelect();
     $('#filter__formats').niceSelect();
     $('#filters__trier-par').niceSelect();
+
+});
 
     /*let currentPage = 1;
     $('.js__loadmore').on('click', function() {
@@ -88,8 +101,8 @@ jQuery(document).ready(function($) {
                     $('.photo__list').append(response);
                 }
             });
-      });*/
-});
+      });
+});*/
 
 /*const boutonLoadMore = document.querySelector('.js__loadmore');
 let page = 2;

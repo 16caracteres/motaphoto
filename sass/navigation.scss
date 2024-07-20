@@ -25,7 +25,6 @@
             gap: 45px;
             @media (max-width:1020px) {
                 display: none;
-                
             }
             li {
                 text-align: center;
@@ -38,14 +37,33 @@
             width: 28px;
             height: 19px;
             display: none;
-            background-image: url(./assets/images/Menu_burger.png);
-            background-repeat: no-repeat;
+            background: url(./assets/images/Menu_burger.png) center center no-repeat;
             background-size: contain;
-            background-position: center;
             cursor: pointer;
             @media (max-width:1020px) {
                 display: block;
                 
+            }
+        }
+        .menu__list-burger {
+            //display: none;
+            @media (max-width:1020px) {
+                display: flex;
+                position: fixed;
+                z-index: 5;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                height: calc( 100% - 80px );
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                gap: 20px;
+                background-color: var(--main-red-color);
+                li a {
+                    color: var(--bg-color);
+                    font-size: 2.75rem ;
+                }
             }
         }
     }
@@ -55,7 +73,7 @@
 
 // CONTACT
 .contact__layout{
-    z-index: 2;
+    z-index: 10;
     position: fixed;
     visibility: hidden;
     overflow: hidden;

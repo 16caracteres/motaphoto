@@ -1,6 +1,8 @@
 // Modale Contact
+//const body = document.getElementsByName(body);Récupérer le body pour faire un overflow menu burger
 const modale = document.getElementById('modale-contact');
 const boutonContact = document.getElementById('menu-item-20');
+const boutonContactBurger = document.querySelector('.menu-item-20');
 const boutonContactSite = document.querySelector('.btn__contact');
 
 // Ajout Ref Input
@@ -9,6 +11,11 @@ const reference = document.querySelector('.photo__reference');
 
 boutonContact.addEventListener("click", () => {
     modale.classList.add("active");
+})
+
+boutonContactBurger.addEventListener("click", () => {
+    modale.classList.add("active");
+    console.log(boutonContactBurger);
 })
 
 if (boutonContactSite) {
@@ -27,7 +34,7 @@ modale.addEventListener("click", (event) => {
 
 // Menu Burger
 const boutonBurger = document.querySelector('.menu__burger');
-const menu = document.querySelector('.menu__list');
+const menu = document.querySelector('.menu__list-burger');
 
 boutonBurger.addEventListener("click", () => {
     menu.classList.toggle("active");

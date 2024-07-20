@@ -18,12 +18,20 @@
             </a>
         </div>
         <nav class="menu">
-            <button class="menu__burger"></button>
             <?php
                 wp_nav_menu([
                     'theme_location' => 'main-menu',
                     'container' => 'ul',
                     'menu_class' => 'menu__list',
+                    ]);
+            ?>
+            <!-- Menu burger -->
+            <button class="menu__burger"></button>
+            <?php
+                wp_nav_menu([
+                    'theme_location' => 'main-menu',
+                    'container' => 'ul',
+                    'menu_class' => 'menu__list-burger',
                     ]);
             ?>
         </nav>
