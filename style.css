@@ -143,6 +143,10 @@ button:hover {
   color: var(--bg-color);
 }
 
+body.no-scroll {
+  overflow: hidden;
+}
+
 .header {
   display: flex;
   flex-direction: row;
@@ -160,6 +164,12 @@ button:hover {
 .header .header__logo a img {
   height: 14px;
   width: 216px;
+}
+@media (max-width: 768px) {
+  .header .header__logo a img {
+    height: 9px;
+    width: 138px;
+  }
 }
 .header .menu {
   font-family: "Space Mono Regular";
@@ -187,7 +197,7 @@ button:hover {
   width: 28px;
   height: 19px;
   display: none;
-  background: url(./assets/images/Menu_burger.png) center center no-repeat;
+  background: url(./assets/images/menu_burger.svg) center center no-repeat;
   background-size: contain;
   cursor: pointer;
 }
@@ -196,24 +206,35 @@ button:hover {
     display: block;
   }
 }
+.header .menu .menu__burger.active {
+  height: 20px;
+  background: url(./assets/images/menu_burger_close.svg) center center no-repeat;
+}
+.header .menu .menu__list-burger {
+  display: none;
+}
 @media (max-width: 1020px) {
   .header .menu .menu__list-burger {
-    display: flex;
     position: fixed;
     z-index: 5;
     top: 80px;
-    left: 0;
+    left: 100%;
     width: 100%;
     height: calc(100% - 80px);
+    display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     gap: 20px;
     background-color: var(--main-red-color);
+    transition: 500ms ease;
   }
   .header .menu .menu__list-burger li a {
     color: var(--bg-color);
     font-size: 2.75rem;
+  }
+  .header .menu .menu__list-burger.active {
+    left: 0;
   }
 }
 
@@ -384,6 +405,7 @@ button:hover {
 @media (max-width: 1024px) {
   .homepage .photos {
     margin: 30px auto 65px auto;
+    max-width: 85vw;
   }
 }
 .homepage .photos .photos__filters form {
@@ -406,11 +428,6 @@ button:hover {
   flex-wrap: wrap;
   gap: 20px;
 }
-@media (max-width: 1024px) {
-  .homepage .photos .photos__filters form div {
-    justify-content: center;
-  }
-}
 .homepage .photos .photos__filters form div select, .homepage .photos .photos__filters form div .nice-select {
   width: 260px;
   height: 43px;
@@ -432,7 +449,9 @@ button:hover {
   margin-left: -1px;
 }
 .homepage .photos .photos__filters form div select option, .homepage .photos .photos__filters form div select .option, .homepage .photos .photos__filters form div .nice-select option, .homepage .photos .photos__filters form div .nice-select .option {
-  width: 260px;
+  width: 242px;
+  padding-left: 18px;
+  padding-right: 0;
   background-color: var(--bg-color);
   border: none;
   text-transform: none;
@@ -596,7 +615,7 @@ button:hover {
 }
 @media (max-width: 1024px) {
   .photo__list {
-    margin: 24px 0;
+    margin: 30px 0;
   }
 }
 .photo__list .photo__no-results {
@@ -608,12 +627,10 @@ button:hover {
 .photo__list .photo__list-item {
   position: relative;
   width: 49%;
-  height: 495px;
 }
 @media (max-width: 1024px) {
   .photo__list .photo__list-item {
     width: 100%;
-    height: 279px;
   }
 }
 .photo__list .photo__list-item .photo__link {
@@ -625,6 +642,7 @@ button:hover {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  aspect-ratio: 564/495;
 }
 .photo__list .photo__list-item .photo__link-hover {
   visibility: hidden;

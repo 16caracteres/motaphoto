@@ -39,10 +39,10 @@
             </div>
             <div class="pagination__arrows">
                 <div class="pagination__arrow_left">
-                    <?php previous_post_link('%link', '<img src="/wp-content/themes/nathalie-mota/assets/images/arrow_left.png" alt="Fléche voir photo précédente" class="arrow_left">'); ?>
+                    <?php previous_post_link('%link', '<img src="/wp-content/themes/nathalie-mota/assets/images/arrow_left.svg" alt="Fléche voir photo précédente" class="arrow_left">'); ?>
                 </div>
                 <div class="pagination__arrow_right">
-                    <?php next_post_link('%link', '<img src="/wp-content/themes/nathalie-mota/assets/images/arrow_right.png" alt="Fléche voir photo suivante" class="arrow_right">'); ?>
+                    <?php next_post_link('%link', '<img src="/wp-content/themes/nathalie-mota/assets/images/arrow_right.svg" alt="Fléche voir photo suivante" class="arrow_right">'); ?>
                     
                 </div>
             </div>

@@ -1,4 +1,9 @@
 // NAVIGATION HEADER
+body {
+    &.no-scroll {
+        overflow: hidden;
+    }
+}
 .header {
     display: flex;
     flex-direction: row;
@@ -13,6 +18,10 @@
     .header__logo a img {
         height: 14px;
         width:216px;
+        @media (max-width:768px) {
+            height: 9px;
+            width: 138px;
+        }
     }
     .menu {
         font-family: 'Space Mono Regular';
@@ -37,39 +46,46 @@
             width: 28px;
             height: 19px;
             display: none;
-            background: url(./assets/images/Menu_burger.png) center center no-repeat;
+            background: url(./assets/images/menu_burger.svg) center center no-repeat;
             background-size: contain;
             cursor: pointer;
             @media (max-width:1020px) {
                 display: block;
-                
+            }
+            &.active {
+                height: 20px;
+                background: url(./assets/images/menu_burger_close.svg) center center no-repeat;
             }
         }
         .menu__list-burger {
-            //display: none;
+            display: none;
             @media (max-width:1020px) {
-                display: flex;
                 position: fixed;
                 z-index: 5;
                 top: 80px;
-                left: 0;
+                left: 100%;
                 width: 100%;
                 height: calc( 100% - 80px );
+
+                display: flex;
                 justify-content: center;
                 align-items: center;
                 flex-direction: column;
                 gap: 20px;
+
                 background-color: var(--main-red-color);
+                transition: 500ms ease;
                 li a {
                     color: var(--bg-color);
                     font-size: 2.75rem ;
                 }
-            }
+                &.active {
+                        left: 0;
+                }
+            }        
         }
     }
 }
-
-
 
 // CONTACT
 .contact__layout{

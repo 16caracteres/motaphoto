@@ -14,7 +14,7 @@
     <header class="header">
         <div class="header__logo">
             <a href="<?php echo get_site_url(); ?>">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Nathalie_Mota_logo.png" alt="Logo Nathalie Mota">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Nathalie_Mota_logo.svg" alt="Logo Nathalie Mota">
             </a>
         </div>
         <nav class="menu">
