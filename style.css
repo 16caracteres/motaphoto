@@ -329,6 +329,12 @@ body.no-scroll {
   margin: 0;
   padding: 0;
 }
+.contact__layout .contact__popup .contact__form .wpcf7 form .wpcf7-response-output {
+  margin: -40px 0 0 0;
+  font-family: "Poppins Light";
+  font-size: 12px;
+  font-style: normal;
+}
 
 .footer {
   height: 40px;
