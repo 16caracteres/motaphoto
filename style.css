@@ -789,9 +789,10 @@ body.no-scroll {
   background: url("assets/images/lightbox_right.svg") right center/27px 16px no-repeat;
   color: var(--bg-color);
   line-height: 1;
+  transition: text-shadow 500ms ease-in-out;
 }
 .lightbox .lightbox__next:hover, .lightbox .lightbox__prev:hover {
-  font-weight: 700;
+  text-shadow: 0 0 0.65px var(--bg-color), 0 0 0.65px var(--bg-color);
 }
 .lightbox .lightbox__next {
   right: 0;
@@ -805,7 +806,7 @@ body.no-scroll {
 }
 .lightbox button {
   opacity: 0.6;
-  transition: opacity 300ms ease;
+  transition: opacity 500ms ease;
 }
 .lightbox button:hover {
   opacity: 1;
