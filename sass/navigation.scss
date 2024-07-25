@@ -25,7 +25,7 @@ body {
     }
     .menu {
         font-family: 'Space Mono Regular';
-        font-weight: 400;
+        //font-weight: 400;
         font-style: normal;
         font-size: 16px;
         text-transform: uppercase;
@@ -39,8 +39,17 @@ body {
                 text-align: center;
             }
         }
-        a:hover{
-            font-weight: 700;
+        a {
+            max-width: max-content;
+            position: relative;
+            display: inline-block;
+            font-weight: 400;
+            transition : text-shadow 500ms ease-in-out;
+            &:hover{
+                text-shadow: 0 0 .65px var(--black-color), 0 0 .65px var(--black-color);
+                //font-weight: 700;
+                //transform: scale(1.05); 
+            }
         }
         .menu__burger {
             width: 28px;
@@ -191,9 +200,11 @@ body {
         font-size: 16px;
         text-transform: uppercase;
         text-align: center;
-        transition: font-weight 300ms ease-in-out;
-        li a:hover {
-            font-weight: 700;
+        li a {
+            transition : text-shadow 500ms ease-in-out;
+            &:hover{
+                text-shadow: 0 0 .65px var(--black-color), 0 0 .65px var(--black-color);
+            }
         }
         @media (max-width:768px) {
             margin: 34px 0;
