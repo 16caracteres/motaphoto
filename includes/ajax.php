@@ -11,11 +11,6 @@ function motaphoto_loadmore () {
     $order = isset($_POST['order']) ? sanitize_text_field($_POST['order']) : 'DESC';
     $paged = isset($_POST['paged']) ? intval($_POST['paged']) : 1;
 
-    error_log('Categorie: ' . $categorie); // Pour journaliser les données
-    error_log('Format: ' . $format);
-    error_log('Order: ' . $order);
-    error_log('Paged: ' . $paged);
-
     $args = [
         'post_type' => 'photos',
         'posts_per_page' => 8,
@@ -71,50 +66,3 @@ function motaphoto_loadmore () {
     echo json_encode($result);
     wp_die();
 }
-
-
-// ----------
-
-
-// Requête Ajax pour filtrer les photos
-/*add_action('wp_ajax_motaphoto_filter_categories', 'motaphoto_filter_categories');
-add_action('wp_ajax_nopriv_motaphoto_filter_categories', 'motaphoto_filter_categories');
-
-function motaphoto_filter_categories() {
-    $categorieSlug = sanitize_text_field($_POST['category']) ;
-    $term = get_term_by('slug', $categorieSlug, 'categorie-photos');
-    $termIds = [$term->term_id];
-
-    if(!$term) {
-        echo 'empty';
-        exit;
-    }
-
-    $ajaxposts = new WP_Query([
-      'post_type' => 'photos',
-      'posts_per_page' => -1,
-      'order' => 'desc',
-      'tax_query' => [
-            [
-                'taxonomy' => 'categorie-photos',
-                'field'    => 'term_id',
-                'terms'    => $termIds,
-                'operator' => 'IN'
-            ],
-        ]
-      
-    ]);
-    $response = '';
-  
-    if($ajaxposts->have_posts()) {
-      while($ajaxposts->have_posts()) : $ajaxposts->the_post();
-        $response .= get_template_part('parts/photos_list');
-      endwhile;
-    } else {
-      $response = 'empty';
-    }
-  
-    echo $response;
-    exit;
-  }*/
-

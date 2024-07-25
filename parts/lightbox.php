@@ -8,7 +8,7 @@
             <img src="" alt="">
         </div>  
         <div class="lightbox__info">
-                <span class="lightbox__info-title">fdlskjflksjdf</span>
+                <span class="lightbox__info-title">Titre de la photo</span>
                 <span class="lightbox__info-cat">Mariage</span>
         </div>
     </div>

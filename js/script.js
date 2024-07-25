@@ -1,5 +1,4 @@
 // Modale Contact
-//const body = document.getElementsByName(body);Récupérer le body pour faire un overflow menu burger
 const modale = document.getElementById('modale-contact');
 const boutonContact = document.getElementById('menu-item-20');
 const boutonContactSite = document.querySelector('.btn__contact');
@@ -32,7 +31,6 @@ const body = document.body;
 const boutonBurger = document.querySelector('.menu__burger');
 const menu = document.querySelector('.menu__list-burger');
 const boutonContactBurger = document.querySelector('.menu__list-burger .menu-item-20');
-//const menuElements = document.querySelectorAll('.menu__list-burger li')
 
 boutonBurger.addEventListener("click", () => {
     menu.classList.toggle("active");
@@ -43,17 +41,9 @@ boutonBurger.addEventListener("click", () => {
 
 boutonContactBurger.addEventListener("touchend", () => {
     modale.classList.add("active");
-    console.log(boutonContactBurger);
 })
 
-/*menuElements.forEach((element) => {
-    element.addEventListener("click", () => {
-        menu.classList.remove("active");
-        boutonBurger.classList.remove("active");
-        /*burgerLinks.forEach(link => link.classList.remove("menu-clic"));
-        document.body.classList.remove("no-scroll");
-    })
-});*/
+/*************/
 
 // Pagination Single.php
 const previousPhoto = document.querySelector('.photo__preview-previous');
